@@ -14,14 +14,30 @@ R_EARTH = 6371.0e3; #radius of earth, m
 ALTITUDE = 700e3 # (in m) assunming height of satellite 700 km
 V_R_B_COE = R_EARTH + ALTITUDE #Distance of satellite from center of earth m
 v_w_IO_o = np.array([0., np.sqrt(G*M_EARTH/(V_R_B_COE)**3), 0.]) #angular velocity of orbit frame wrt inertial frame in orbit frame
-
 AU = 149597870700.0 #Distance between sun and earth in meters
 R_SUN = 6957e5 #Radius of the Sun in meters
+
 #------------date format yyyy,mm,dd (TLE taken from n2yo.com on 3rd April)
 LINE1 = ('1 41783U 16059A   18093.17383152  .00000069  00000-0  22905-4 0  9992') #Insert TLE Here
 LINE2 = ('2 41783  98.1258 155.9141 0032873 333.2318  26.7186 14.62910114 80995') 
-Incl = LINE2[8:16]
-Inclination = float("".join(map(str, Incl)))
+'''
+#For Polar orbit
+Eccen = 0
+Incl_deg =90
+'''
+### add TT and dT in constants
+TT = 200.0 # total time in minutes   ##add in constant
+dT = np.linspace(0.0,TT*60.0,(TT*60*10 + 1)) #np.linspace(0.0,TT*60.0,(100*60*10 + 1)) ## dT is in seconds. total 100 minutes here. 10 is for 1/timestep
+####ADDED following block ......these data based on spacetrack report3 page 81
+MeanMo = 14.62910114  #16.05824518
+Eccen = 0.0032873     # 0.0086731
+Incl_deg =98.1258
+MeanAnamoly_deg = 26.7186  #110.5714
+ArgP = 333.2318 #52.6988
+RAAN_deg = 155.9141  # 115.9689
+DMeanMotion =0.00000069
+DDMeanMotion =0
+BStar = 0.22905e-4 #7e-07
 
 TPer = LINE2[52:63]
 TiPer = float("".join(map(str, TPer)))
@@ -41,8 +57,8 @@ Ixy = 0.00000437
 Iyz = - 0.00000408
 Ixz = 0.00000118
 
-m_INERTIA = np.array([[Ixx, Ixy, Ixz], [Ixy, Iyy, Iyz], [Ixz, Iyz, Izz]])	#actual inertia
-#m_INERTIA = 0.001*np.array([[1.0,0.,0.],[0.,1.,0.],[0.,0.,1.]])	#identity inertia
+#m_INERTIA = np.array([[Ixx, Ixy, Ixz], [Ixy, Iyy, Iyz], [Ixz, Iyz, Izz]])	#actual inertia
+m_INERTIA = np.array([[1.0,0.,0.],[0.,1.,0.],[0.,0.,1.]])	#identity inertia
 
 m_INERTIA_inv = np.linalg.inv(m_INERTIA)	#inverse of inertia matrix
 J=np.linalg.eig(m_INERTIA)
@@ -102,4 +118,4 @@ r_COG_2_COM_b = np.array([-0.69105608e-3,-0.69173140e-3,-2.37203930e-3])
 AERO_DRAG = 2.2
 RHO = 0.218e-12
 
-k_detumbling = 4*np.pi*(1+sin(radians(Inclination-11)))*Jmin/TimePeriod    #gain constant in B_dot controller (from book by F. Landis Markley)
+k_detumbling = 4*np.pi*(1+sin(radians(Incl_deg-11)))*Jmin/TimePeriod    #gain constant in B_dot controller (from book by F. Landis Markley)
