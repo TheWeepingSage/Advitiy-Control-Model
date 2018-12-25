@@ -44,7 +44,7 @@ for k in range(0,len(m_light_output_temp)-2): #we go to k=length-2 only because 
 		init = k
 		count = 1
 		
-	elif l1==0.5 and l2==0 and count == 1:	#start of second eclipse
+	elif l1==0 and l2==0.5 and count == 1:	#end of first eclipse
 		end = k 
 		break
 
@@ -55,25 +55,24 @@ print (end)
 t0 = m_sgp_output_temp_i[init,0]
 tf = m_sgp_output_temp_i[end,0]	   #tf-t0 represents simulation time in seconds
 h = 0.1		                       #step size of integration in seconds  
-Nmodel = int((tf-t0)/MODEL_STEP)+1 #no. of time environment-cycle will run
 Ncontrol = int((tf-t0)/CONTROL_STEP) #no. of time control-cycle will run
 
 #extract init to end data from temp file
-m_sgp_output_i = m_sgp_output_temp_i[init:(init+Nmodel),:].copy()
-m_si_output_b = m_si_output_temp_b[init:(init+Nmodel),:].copy()
-m_light_output = m_light_output_temp[init:(init+Nmodel),:].copy()
-m_magnetic_field_i = m_magnetic_field_temp_i[(init-1):(init+Nmodel),:].copy()
+m_sgp_output_i = m_sgp_output_temp_i[init:(init+Ncontrol*int(CONTROL_STEP/MODEL_STEP)),:].copy()
+m_si_output_b = m_si_output_temp_b[init:(init+Ncontrol*int(CONTROL_STEP/MODEL_STEP)),:].copy()
+m_light_output = m_light_output_temp[init:(init+Ncontrol*int(CONTROL_STEP/MODEL_STEP)),:].copy()
+m_magnetic_field_i = m_magnetic_field_temp_i[(init-1):(init+Ncontrol*int(CONTROL_STEP/MODEL_STEP)),:].copy()
 
 print ((Ncontrol)*20 ,'Simulations for', Ncontrol*CONTROL_STEP, 'seconds')
 
 #initialize empty matrices which will be needed in this simulation
-v_state = np.zeros((Nmodel,7))
-euler = np.zeros((Nmodel,3))
-torque_dist_total = np.zeros((Nmodel,3))
-torque_dist_gg = np.zeros((Nmodel,3))
-torque_dist_aero = np.zeros((Nmodel,3))
-torque_dist_solar = np.zeros((Nmodel,3))
-torque_control = np.zeros((Nmodel,3))
+v_state = np.zeros((Ncontrol*int(CONTROL_STEP/MODEL_STEP)+1,7))
+euler = np.zeros((Ncontrol*int(CONTROL_STEP/MODEL_STEP)+1,3))
+torque_dist_total = np.zeros((Ncontrol*int(CONTROL_STEP/MODEL_STEP)+1,3))
+torque_dist_gg = np.zeros((Ncontrol*int(CONTROL_STEP/MODEL_STEP)+1,3))
+torque_dist_aero = np.zeros((Ncontrol*int(CONTROL_STEP/MODEL_STEP)+1,3))
+torque_dist_solar = np.zeros((Ncontrol*int(CONTROL_STEP/MODEL_STEP)+1,3))
+torque_control = np.zeros((Ncontrol*int(CONTROL_STEP/MODEL_STEP)+1,3))
 
 #defining initial conditions
 #initial state based on initial qBO and wBOB
@@ -90,20 +89,19 @@ Advitiy.setControl_b(np.array([0.,0.,0.]))
 Advitiy.setMag_b_m_c(m_magnetic_field_i[0,:]) 
 
 print(Ncontrol)
-print(Nmodel)
 #-------------Main for loop---------------------
-for  i in range(0,Ncontrol-1):  #loop for control-cycle
+for  i in range(0,Ncontrol):  #loop for control-cycle
 	if math.fmod(i,int(Ncontrol/100)) == 0: #we are printing percentage of cycle completed to keep track of simulation
 		print (int(100*i/Ncontrol))
 	
-	for k in range (0,int(CONTROL_STEP/MODEL_STEP)+1):  #loop for environment-cycle
+	for k in range (0,int(CONTROL_STEP/MODEL_STEP)):  #loop for environment-cycle
 		#Set satellite parameters
 		#state is set inside solver
 		Advitiy.setPos(m_sgp_output_i[i*int(CONTROL_STEP/MODEL_STEP)+k,1:4])
 		Advitiy.setVel(m_sgp_output_i[i*int(CONTROL_STEP/MODEL_STEP)+k,4:7])
 		Advitiy.setLight(m_light_output[i*int(CONTROL_STEP/MODEL_STEP)+k,1])
 		Advitiy.setTime(t0 + i*CONTROL_STEP + k*MODEL_STEP) #time at a cycle 
-
+		#print(i*int(CONTROL_STEP/MODEL_STEP)+k)
 		#control
 		Advitiy.setSun_i(m_si_output_b[i*int(CONTROL_STEP/MODEL_STEP)+k,1:4])
 		Advitiy.setMag_i(m_magnetic_field_i[i*int(CONTROL_STEP/MODEL_STEP)+k,1:4])
@@ -185,7 +183,7 @@ os.mkdir('trial')
 os.chdir('trial')
 np.savetxt('position.csv',m_sgp_output_i[:,1:4], delimiter=",")
 np.savetxt('velocity.csv',m_sgp_output_i[:,4:7], delimiter=",")
-np.savetxt('time.csv',m_sgp_output_i[:,0] - t0, delimiter=",")
+np.savetxt('time.csv',m_sgp_output_i[:,0], delimiter=",")
 np.savetxt('state.csv',v_state, delimiter=",")
 np.savetxt('euler.csv',euler, delimiter=",")
 np.savetxt('disturbance-total.csv',torque_dist_total, delimiter=",")
