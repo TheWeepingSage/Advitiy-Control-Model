@@ -2,7 +2,7 @@
 
 import appr_actuator as act
 from constants_1U import *
-import controller as con
+#import controller as con
 import default_blocks as defblock
 import disturbance_1U as dist
 from dynamics import x_dot_BO
@@ -92,7 +92,7 @@ Advitiy.setMag_b_m_c(m_magnetic_field_i[0,:])
 print(Ncontrol)
 print(Nmodel)
 #-------------Main for loop---------------------
-for  i in range(0,Ncontrol):  #loop for control-cycle
+for  i in range(0,Ncontrol-1):  #loop for control-cycle
 	if math.fmod(i,int(Ncontrol/100)) == 0: #we are printing percentage of cycle completed to keep track of simulation
 		print (int(100*i/Ncontrol))
 	
@@ -135,7 +135,7 @@ for  i in range(0,Ncontrol):  #loop for control-cycle
 		#storing data in matrices
 		v_state[i*int(CONTROL_STEP/MODEL_STEP)+k+1,:] = Advitiy.getState()
 		euler[i*int(CONTROL_STEP/MODEL_STEP)+k+1,:] = qnv.quat2euler(Advitiy.getQ_BO())
-
+	'''	
 	#sensor reading
 	if (sensbool == 0):
 		#getting default sensor reading (zero noise in our case)
@@ -160,7 +160,7 @@ for  i in range(0,Ncontrol):  #loop for control-cycle
 		Advitiy.setQUEST(defblock.estimator(Advitiy))
 
 	#if (estbool == 1): #qBO is obtained using Quest/MEKF
-
+	'''
 	#control torque
 	
 	if (contcons == 0):
@@ -169,7 +169,7 @@ for  i in range(0,Ncontrol):  #loop for control-cycle
 	
 	#if (contcons == 1):
 		#getting control torque by detumbling controller
-	
+	'''
 	#torque applied
 	
 	if (actbool == 0):
@@ -178,14 +178,14 @@ for  i in range(0,Ncontrol):  #loop for control-cycle
 	
 	#if (actcons == 1):
 		#getting applied torque by actuator modelling (magnetic torque limitation is being considered)
-
+	'''
 #save the data files
-os.chdir('Logs-Detumbling/')
+os.chdir('Logs_uncontrolled/')
 os.mkdir('trial')
 os.chdir('trial')
-np.savetxt('position.csv',m_sgp_output_i[init:end+1,1:4], delimiter=",")
-np.savetxt('velocity.csv',m_sgp_output_i[init:end+1,4:7], delimiter=",")
-np.savetxt('time.csv',m_sgp_output_i[init:end+1,0] - t0, delimiter=",")
+np.savetxt('position.csv',m_sgp_output_i[:,1:4], delimiter=",")
+np.savetxt('velocity.csv',m_sgp_output_i[:,4:7], delimiter=",")
+np.savetxt('time.csv',m_sgp_output_i[:,0] - t0, delimiter=",")
 np.savetxt('state.csv',v_state, delimiter=",")
 np.savetxt('euler.csv',euler, delimiter=",")
 np.savetxt('disturbance-total.csv',torque_dist_total, delimiter=",")
