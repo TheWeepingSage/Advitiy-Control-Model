@@ -44,7 +44,7 @@ def disturbance(sat):
 
 #Default models of estimator: (returns qBO obtained by integrator)
 def estimator(sat):
-return(sat.getQ_BO())
+    return(sat.getQ_BO())
 
 #Default models of estimator: (returns qBO obtained by integrator)
 def estimator(sat):
