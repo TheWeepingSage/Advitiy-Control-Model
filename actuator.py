@@ -49,7 +49,7 @@ def lrPWM(v_duty_cycle,v_i_prev,v_t_prev,t):
 	return v_i_app
 
 
-def getCurrentList(h,v_duty_cycle):
+def getCurrentList(h, v_duty_cycle):
 	'''
 		This functions returns current list for t=0 to t=CONTROL_STEP. Cycle is defined such that time corresponding to 
 		rising or falling edge is considered in previous cycle. 
@@ -57,7 +57,7 @@ def getCurrentList(h,v_duty_cycle):
 	T = 1/PWM_FREQUENCY
 	N = int(CONTROL_STEP/h)
 
-	t = np.linspace(0,CONTROL_STEP,N, endpoint=False)
+	t = np.linspace(0, CONTROL_STEP, N, endpoint=False)
 	m_i_app = np.zeros((N,4))
 
 

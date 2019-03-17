@@ -1,7 +1,7 @@
 
 import numpy as np
 import math
-from  constants_1U import No_Turns,v_A_Torquer,RESISTANCE,INDUCTANCE,CONTROL_STEP,h
+from constants_1U import No_Turns,v_A_Torquer,RESISTANCE,INDUCTANCE,CONTROL_STEP,h
 from qnv import quatRotate
 
 def ctrlTorqueToVoltage(sat):
@@ -11,16 +11,16 @@ def ctrlTorqueToVoltage(sat):
         Input: satellite
         Output: Voltage to be applied to Torquer to achieve the required control torque
     '''
-    v_magnetic_field_i=sat.getMag_i()
-    v_magnetic_field_b=quatRotate(sat.getQ(),v_magnetic_field_i) #get mag field in body frame 
+    v_magnetic_field_i = sat.getMag_i()
+    v_magnetic_field_b = quatRotate(sat.getQ(), v_magnetic_field_i) #get mag field in body frame
 
     v_torque_control_b = sat.getControl_b()
     #below is formulae for calculating required magnetic moment from the control torque
-    v_magnetic_moment_b=(1/(np.linalg.norm(v_magnetic_field_b))**2)*np.cross(v_magnetic_field_b,v_torque_control_b)
+    v_magnetic_moment_b = (1/(np.linalg.norm(v_magnetic_field_b))**2)*np.cross(v_magnetic_field_b,v_torque_control_b)
 
-    v_current=(1.0/No_Turns)*np.divide(v_magnetic_moment_b,v_A_Torquer)
+    v_current = (1.0/No_Turns)*np.divide(v_magnetic_moment_b,v_A_Torquer)
 
-    voltage=v_current*RESISTANCE  #simple I*R is used, since there's no other way as of now
+    voltage = v_current*RESISTANCE  #simple I*R is used, since there's no other way as of now
     return voltage
 
 def I(voltage):
@@ -40,6 +40,7 @@ def I(voltage):
         m_i_app_dc[s,1:4]=(voltage/RESISTANCE)*(1-np.exp(-RESISTANCE*t[s]/INDUCTANCE)) #LR circuit equation
     return  m_i_app_dc
 
+
 def currentToTorque(current_list,sat):
     '''
         This function calculates the torques acting on satellite to a corresponding current in the torquer.
@@ -53,9 +54,3 @@ def currentToTorque(current_list,sat):
 
     v_torque_app_b = np.cross(v_mu_app,v_magnetic_field_b)
     return v_torque_app_b
-    
-    
-
-    
-    
-    
