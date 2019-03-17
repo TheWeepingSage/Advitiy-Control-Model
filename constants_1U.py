@@ -107,7 +107,7 @@ h = 0.001 #step size of integration in seconds
 INDUCTANCE = 68e-3	#Inductance of torquer in Henry
 RESISTANCE = 107.0	#Resistance of torquer	in Ohm
 PWM_AMPLITUDE = 3.3	#PWM amplitude in volt
-PWM_FREQUENCY = 3e3 #frequency of PWM signal
+PWM_FREQUENCY = 1e3 #frequency of PWM signal
 No_Turns=450        #No. of turns of torquer
 v_A_Torquer = np.array([0.0049,0.0049,0.0049])	#area vector of torquers in m^2
 

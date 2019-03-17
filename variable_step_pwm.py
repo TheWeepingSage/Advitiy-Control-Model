@@ -30,8 +30,8 @@ for i in range(0, 3):
     for k in range(0,10):
         i_applied[k+10, i] = i_applied[k+9, i] + step_l[i]
     i_applied[0:10, i+3] = (act.PWM_AMPLITUDE/act.RESISTANCE)*(1-np.exp(-act.RESISTANCE/act.INDUCTANCE*i_applied[0:10, i]))
-    i_applied[10:19, i+3] = i_applied[9, i+3]*np.exp(-act.RESISTANCE/act.INDUCTANCE*i_applied[10:19, i])
-    plt.plot(i_applied[0:19, i], i_applied[0:19, i+3])
+    i_applied[10:20, i+3] = i_applied[9, i+3]*np.exp(-act.RESISTANCE/act.INDUCTANCE*i_applied[10:20, i])
+    plt.plot(i_applied[0:20, i], i_applied[0:20, i+3])
 
 plt.show()
 print(math.exp(act.RESISTANCE))
