@@ -1,16 +1,7 @@
 import numpy as np
 import actuator as act
 import matplotlib.pyplot as plt
-"""
-v_duty_cycle = np.array([.2, 0.5, .9])
 
-i_applied = act.getCurrentList(0.00001, v_duty_cycle)
-
-plt.plot(i_applied[:, 0], i_applied[:, 1], 'r')
-plt.plot(i_applied[:, 0], i_applied[:, 2], 'b')
-plt.plot(i_applied[:, 0], i_applied[:, 3], 'g')
-plt.show()
-"""
 t_p = 1/act.PWM_FREQUENCY   #time period of one cycle
 dt_p = np.zeros(3)
 v_duty_cycle = np.array([.02, 0.5, .9])
