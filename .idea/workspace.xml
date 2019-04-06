@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e197912a-ce70-4396-9655-a160bc2e321b" name="Default Changelist" comment="">
+    <list default="true" id="e197912a-ce70-4396-9655-a160bc2e321b" name="Default Changelist" comment="Implemented analytical solution for current. Possible problems: might be time-consuming&#10;Input: duty cycle vector, initial current array, array of time- instants&#10;Output:array of current at given time">
+      <change afterPath="$PROJECT_DIR$/basic_correct.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants_1U.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants_1U.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/estimate_torque.py" beforeDir="false" afterPath="$PROJECT_DIR$/basic_correct.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variable_step_pwm.py" beforeDir="false" afterPath="$PROJECT_DIR$/variable_step_pwm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estimate_torque.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytical_act_current.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,52 +15,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/actuator.py">
+        <entry file="file://$PROJECT_DIR$/constants_1U.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="131">
+              <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/variable_step_pwm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-243">
+              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TorqueApplied.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/constants_1U.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/variable_step_pwm.py">
+        <entry file="file://$PROJECT_DIR$/analytical_act_current.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic_correct.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+            <state relative-caret-position="352">
+              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -92,9 +70,10 @@
       <list>
         <option value="$PROJECT_DIR$/actuator.py" />
         <option value="$PROJECT_DIR$/testcode.py" />
+        <option value="$PROJECT_DIR$/constants_1U.py" />
         <option value="$PROJECT_DIR$/basic_correct.py" />
         <option value="$PROJECT_DIR$/variable_step_pwm.py" />
-        <option value="$PROJECT_DIR$/constants_1U.py" />
+        <option value="$PROJECT_DIR$/analytical_act_current.py" />
       </list>
     </option>
   </component>
@@ -124,7 +103,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/variable_step_pwm.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/analytical_act_current.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -144,7 +123,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.variable_step_pwm">
+  <component name="RunManager" selected="Python.analytical_act_current">
     <configuration name="Advitiy-Control-Model" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Advitiy-Control-Model" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,6 +208,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="analytical_act_current" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Advitiy-Control-Model" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Millen\PycharmProjects\PythonTut\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analytical_act_current.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testcode" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Advitiy-Control-Model" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -278,6 +278,7 @@
       <item itemvalue="Python.actuator" />
       <item itemvalue="Python.testcode" />
       <item itemvalue="Python.variable_step_pwm" />
+      <item itemvalue="Python.analytical_act_current" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -347,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553858734558</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Rectified an error with the global time of the second half of the first cycle">
+      <created>1554312431589</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554312431589</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -379,7 +387,8 @@
     <MESSAGE value="Rectified the error.&#10;The new code shows the correct value of the current wrt the time elapsed since the last edge.&#10;Commenting done.&#10;Will include global time within the original array in next update" />
     <MESSAGE value="Global time implemented&#10;Works for extremely low values of duty cycle&#10;Commenting done" />
     <MESSAGE value="Converted the program to be more usable (implemented the code as programs instead of standalone code)&#10;Checked the code with a kinda trivial test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="Converted the program to be more usable (implemented the code as programs instead of standalone code)&#10;Checked the code with a kinda trivial test case" />
+    <MESSAGE value="Rectified an error with the global time of the second half of the first cycle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rectified an error with the global time of the second half of the first cycle" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tokenize.py">
@@ -411,8 +420,18 @@
     <entry file="file://$PROJECT_DIR$/estimate_torque.py" />
     <entry file="file://$PROJECT_DIR$/TorqueApplied.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
+        <state relative-caret-position="1012">
           <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic_correct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -426,10 +445,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic_correct.py">
+    <entry file="file://$PROJECT_DIR$/variable_step_pwm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+        <state relative-caret-position="-243">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -438,15 +457,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/constants_1U.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+        <state relative-caret-position="131">
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/variable_step_pwm.py">
+    <entry file="file://$PROJECT_DIR$/appr_actuator.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analytical_act_current.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+        <state relative-caret-position="352">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
