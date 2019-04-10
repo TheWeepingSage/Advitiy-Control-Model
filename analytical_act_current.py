@@ -1,13 +1,12 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from constants_1U import RESISTANCE, INDUCTANCE, PWM_AMPLITUDE, PWM_FREQUENCY, CONTROL_STEP
 import math
 
-
 def getEdgeCurrent(v_duty_cycle, I0):   # to return an array with current at the edges
     t_p = 1/PWM_FREQUENCY   # time period
     num_cycles = int(CONTROL_STEP/t_p)  # number of cycles=n
-    dt_p = np.zeros(3)
-    dt_p[0:3] = v_duty_cycle[0:3] * t_p     # time for which the voltage is high per cycle
+    dt_p = np.array(v_duty_cycle[0:3] * t_p)     # time for which the voltage is high per cycle
     dt_n = np.array(t_p-dt_p[0:3])  # time for which current is low
     edgeCurrentList = np.zeros((num_cycles*2+1, 3))     # edgeCurrentList has 2n+1 rows, 3 columns for the currents
     edgeCurrentList[0, 0:3] = I0[0:3]   # setting initial value of current
@@ -27,7 +26,9 @@ def getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t):
     cur_cycle = int(t / t_p)    # gives us the index of the cycle we're in
     current_t = np.zeros(3)
     for i in range(0, 3):   # t in the comments indicates the time since last edge
-        if t_mod_tp < dt_p[i]:  # if the instant lies before th falling edge
+        if cur_cycle >= int(CONTROL_STEP/t_p):
+            current_t = edgeCurrentList[cur_cycle*2, :]
+        elif t_mod_tp < dt_p[i]:  # if the instant lies before th falling edge
             current_t[i] = (PWM_AMPLITUDE - (PWM_AMPLITUDE - RESISTANCE * edgeCurrentList[cur_cycle*2, i])*math.exp(-RESISTANCE*t_mod_tp/INDUCTANCE)) / RESISTANCE  # I=1/R(V-(V-I0R)exp(-Rt/L))
         else:
             current_t[i] = edgeCurrentList[2*cur_cycle+1, i]*math.exp(-RESISTANCE*(t_mod_tp-dt_p[i])/INDUCTANCE)    # I = I0exp(-Rt/L)
@@ -40,3 +41,11 @@ def getCurrentList(v_duty_cycle, t, n, I0):
     for i in range(0, n):
         currentList[i, :] = getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t[i])
     return currentList
+
+
+duty_cycle = np.array([0, 0, 0.0001])
+n = 1000
+t_array = np.linspace(0, 0.000002, n, endpoint=False)
+I0 = np.array([0, 0, 0])
+print(getCurrentList(duty_cycle, t_array, n, I0)[0:35,2])
+print(CONTROL_STEP%(1/PWM_FREQUENCY), PWM_FREQUENCY, CONTROL_STEP, 1/PWM_FREQUENCY)
