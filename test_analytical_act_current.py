@@ -1,4 +1,4 @@
-from analytical_act_current import getEdgeCurrent, getCurrentList, getAnalyticalCurrent
+from analytical_act_current_test import getEdgeCurrent, getCurrentList, getAnalyticalCurrent
 import numpy as np
 from ddt import ddt, data, unpack
 import unittest

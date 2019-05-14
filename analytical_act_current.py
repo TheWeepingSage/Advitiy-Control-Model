@@ -1,13 +1,8 @@
-# import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
-# from constants_1U import RESISTANCE, INDUCTANCE, PWM_AMPLITUDE, PWM_FREQUENCY, CONTROL_STEP
+from constants_1U import RESISTANCE, INDUCTANCE, PWM_AMPLITUDE, PWM_FREQUENCY, CONTROL_STEP
 import math
 import time
-RESISTANCE = 1
-INDUCTANCE = 1
-PWM_FREQUENCY = 1
-PWM_AMPLITUDE = 1
-CONTROL_STEP = 2
 
 
 def getEdgeCurrent(v_duty_cycle, I0):   # to return an array with current at the edges, input: duty cycle, initial current
@@ -19,7 +14,7 @@ def getEdgeCurrent(v_duty_cycle, I0):   # to return an array with current at the
     edgeCurrentList[0, :] = I0   # setting initial value of current
     edgeCurrentList[1, :] = 1/RESISTANCE * (PWM_AMPLITUDE-(PWM_AMPLITUDE-I0*RESISTANCE)*np.exp(-RESISTANCE*dt_p/INDUCTANCE))    # Setting value of current at first edge
     for i in range(1, num_cycles):
-        edgeCurrentList[2 * i, :] = edgeCurrentList[2*i-1 , :]*np.exp(-RESISTANCE*dt_n/INDUCTANCE)
+        edgeCurrentList[2 * i, :] = edgeCurrentList[2*i-1, :]*np.exp(-RESISTANCE*dt_n/INDUCTANCE)
         edgeCurrentList[(2 * i) + 1, :] = (PWM_AMPLITUDE - (PWM_AMPLITUDE - RESISTANCE*edgeCurrentList[2 * i, :])*np.exp(-RESISTANCE*dt_p/INDUCTANCE))/RESISTANCE
     edgeCurrentList[2 * num_cycles, :] = edgeCurrentList[2 * num_cycles - 1, :] * np.exp(-RESISTANCE * dt_n / INDUCTANCE)  # Setting the current for the last edge
     return edgeCurrentList
@@ -48,7 +43,7 @@ def getCurrentList(v_duty_cycle, t, n, I0): # input: duty cycle, array of time i
         currentList[i, :] = getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t[i])   # current[ti]
     return currentList
 
-'''
+
 duty_cycle = np.array([0.001, 0.000001, 0.000001])
 n = 40000
 t_array = np.linspace(0, 0.02, n, endpoint=False)
@@ -61,4 +56,3 @@ current = getCurrentList(duty_cycle, t_array, n, I0)
 actend = time.time()
 print(actend - actstart)
 print(CONTROL_STEP%(1/PWM_FREQUENCY), PWM_FREQUENCY, CONTROL_STEP, 1/PWM_FREQUENCY)
-'''
