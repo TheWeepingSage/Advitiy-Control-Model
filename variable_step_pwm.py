@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from constants_1U import RESISTANCE, INDUCTANCE, PWM_AMPLITUDE, PWM_FREQUENCY, CONTROL_STEP
-
+import time
 
 def vstepPWM(v_duty_cycle, n):
     t_p = 1/PWM_FREQUENCY   #time period of one cycle
@@ -43,4 +43,7 @@ def plot(i_applied, n, v_duty_cycle):
 
 
 v_duty_cycle = np.array([0.000001, 0.000001, 0.001])
-plot(vstepPWM(v_duty_cycle, 10), 100, v_duty_cycle)
+vspstart = time.time()
+current = (vstepPWM(v_duty_cycle, 10))
+vspend = time.time()
+print(vspend-vspstart)

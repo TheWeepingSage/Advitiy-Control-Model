@@ -1,6 +1,7 @@
 import numpy as np
 from constants_1U import RESISTANCE, INDUCTANCE, PWM_AMPLITUDE, PWM_FREQUENCY, CONTROL_STEP
 import math
+import time
 
 def leq(a, b, rel_tol=1e-12, abs_tol=1e-12):
 	'''
@@ -85,3 +86,10 @@ def getCurrentList(h, v_duty_cycle):
 		m_i_app[i,1:4] = lrPWM(v_duty_cycle,v_i_prev,v_t_prev,t[i])
 		
 	return m_i_app
+
+h = 0.0000001
+duty_cycle = np.array([0.000001,0.000001,0.001])
+actstart = time.time()
+print(getCurrentList(h, duty_cycle))
+actend = time.time()
+print(actend-actstart)

@@ -33,7 +33,7 @@ if (orbitbool==1):
 	m_magnetic_field_temp_i = np.genfromtxt('mag_output_i_SSO.csv',delimiter=",") 
 
 
-count = 0 # to count no. of transitions from light to eclipses
+count = 0 	# to count no. of transitions from light to eclipses
 init,end = 0,0
 
 for k in range(0,len(m_light_output_temp)-2): #we go to k=length-2 only because maximum index for an array is length-1 and l2 = aaray[k+1]
