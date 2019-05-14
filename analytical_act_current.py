@@ -20,7 +20,7 @@ def getEdgeCurrent(v_duty_cycle, I0):   # to return an array with current at the
     return edgeCurrentList
 
 
-def getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t):  # input: duty cycle, list of currents at edges
+def getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t):  #gives current at a time instant t. input: duty cycle, list of currents at edges
     t_p = 1 / PWM_FREQUENCY  # time period
     dt_p = v_duty_cycle * t_p  # time for which the voltage is high per cycle
     t_mod_tp = t % t_p  # time elapsed since last rising edge
@@ -36,14 +36,15 @@ def getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t):  # input: duty cycle
     return current_t
 
 
-def getCurrentList(v_duty_cycle, t, n, I0): # input: duty cycle, array of time instants, number of time instants, initial current
+def getCurrentList(v_duty_cycle, t, n, I0): # gives current values at time instants in a given array input: duty cycle, array of time instants, number of time instants, initial current
     edgeCurrentList = getEdgeCurrent(v_duty_cycle, I0)
     currentList = np.zeros((n, 3))
     for i in range(0, n):
         currentList[i, :] = getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t[i])   # current[ti]
     return currentList
 
-
+# this was used to compare the time taken for execution, however, it remains to be seen whether the execution in the
+# actual program takes a proportional amount of time
 duty_cycle = np.array([0.001, 0.000001, 0.000001])
 n = 40000
 t_array = np.linspace(0, 0.02, n, endpoint=False)
