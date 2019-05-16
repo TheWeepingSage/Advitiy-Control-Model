@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e197912a-ce70-4396-9655-a160bc2e321b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_sat.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_sat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_actuator.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_actuator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/solver.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/solver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
+            <state relative-caret-position="223">
               <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -52,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/main_actuator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -419,8 +417,8 @@
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.actuator" />
       <item itemvalue="Python.analytical_act_current" />
-      <item itemvalue="Python.main_actuator" />
       <item itemvalue="Python.test_analytical_act_current" />
+      <item itemvalue="Python.main_actuator" />
       <item itemvalue="Python.testcode" />
       <item itemvalue="Python.variable_step_pwm" />
       <item itemvalue="Python tests.Unittests for test_analytical_act_current.TestCurrents.test_edges" />
@@ -579,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557991901106</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Code for testing actuator">
+      <created>1558006826292</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1558006826292</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -841,7 +846,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
+        <state relative-caret-position="223">
           <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -852,7 +857,7 @@
     <entry file="file://$PROJECT_DIR$/main_actuator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
