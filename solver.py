@@ -15,7 +15,7 @@ def rk4Quaternion(sat,f,h): #This is Runge Kutta-4 solver for ordinary different
 	print(sat.getPos())
 '''
 	v_state_error_0 = sat.getState()	#state at t = t0	
-	t = sat.getTime() 
+	t = sat.getTime()
 	#rk-4 routine (updating satellite class state with obtained state at every step of rk4 routine)
 	#first step of rk4 routine
 	k1 = h*f(sat)

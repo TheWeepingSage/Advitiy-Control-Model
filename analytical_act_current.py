@@ -43,6 +43,7 @@ def getCurrentList(v_duty_cycle, t, n, I0): # gives current values at time insta
         currentList[i, :] = getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t[i])   # current[ti]
     return currentList
 
+'''
 # this was used to compare the time taken for execution, however, it remains to be seen whether the execution in the
 # actual program takes a proportional amount of time
 duty_cycle = np.array([0.001, 0.000001, 0.000001])
@@ -57,3 +58,4 @@ current = getCurrentList(duty_cycle, t_array, n, I0)
 actend = time.time()
 print(actend - actstart)
 print(CONTROL_STEP%(1/PWM_FREQUENCY), PWM_FREQUENCY, CONTROL_STEP, 1/PWM_FREQUENCY)
+'''

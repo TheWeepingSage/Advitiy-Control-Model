@@ -10,10 +10,10 @@ def x_dot_BO(sat):    #need m_INERTIA (abot center of mass)
         Input: satellite, time
         Output: Differential state vector
     '''
-    #get torques acting about COM
-    v_torque_control_b = sat.getControl_b()     #Control torque
-    v_torque_dist_b = sat.getDisturbance_b()    #Disturbance torque
-    v_torque_b = v_torque_control_b + v_torque_dist_b
+    #get torques acting about COM    #Disturbance torque
+    v_disturbance_torque = 0
+    v_control_torque = sat.getControl_b()
+    v_torque_b = v_control_torque + v_disturbance_torque
     
     #get current state
     v_q_BO = sat.getQ_BO()  #unit quaternion rotating from orbit to body 
@@ -26,7 +26,7 @@ def x_dot_BO(sat):    #need m_INERTIA (abot center of mass)
     v_w_OI_o = -v_w_IO_o.copy()
 
     #Dynamic equation - Euler equation of motion
-    v_w_BO_b_dot = np.dot(m_INERTIA_inv,v_torque_b - np.cross(v_w_BI_b,np.dot(m_INERTIA,v_w_BI_b))) - (np.cross(np.dot(R, v_w_OI_o), v_w_BO_b) + np.dot(R, v_w_OI_o))
-    v_x_dot = np.hstack((v_q_BO_dot,v_w_BO_b_dot))
+    v_w_BO_b_dot = np.dot(m_INERTIA_inv, v_torque_b - np.cross(v_w_BI_b,np.dot(m_INERTIA,v_w_BI_b))) - (np.cross(np.dot(R, v_w_OI_o), v_w_BO_b))
+    v_x_dot = np.hstack((v_q_BO_dot, v_w_BO_b_dot))
 
     return v_x_dot
