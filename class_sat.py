@@ -68,7 +68,7 @@ class Satellite:
         return self.v_dist_b
 
     def setRequiredTorque(self, t):
-        self.requiredTorque = np.array([np.sin(t), np.cos(t), np.sin(2*t)])*1e-8
+        self.requiredTorque = np.array([1, 1, 1])*1e-8
 
     def getRequiredTorque(self):
         return self.requiredTorque
