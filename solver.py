@@ -2,7 +2,7 @@ import numpy as np
 import frames
 from constants_1U import G, M_EARTH, v_w_IO_o
 
-def rk4Quaternion(sat,f,h): #This is Runge Kutta-4 solver for ordinary differential equation.
+def rk4Quaternion(sat,f,h, torqueArray): #This is Runge Kutta-4 solver for ordinary differential equation.
 	'''
 		Input is satellite object, f (derivative of state vector (quaternion and angular velocity)) and integration step size
 		It returns value of state at next time (after a time step of h) (x(t+h)) using f and value of state at current time (x(t))
@@ -16,8 +16,9 @@ def rk4Quaternion(sat,f,h): #This is Runge Kutta-4 solver for ordinary different
 '''
 	v_state_error_0 = sat.getState()	#state at t = t0	
 	t = sat.getTime()
-	#rk-4 routine (updating satellite class state with obtained state at every step of rk4 routine)
-	#first step of rk4 routine
+	# rk-4 routine (updating satellite class state with obtained state at every step of rk4 routine)
+	# first step of rk4 routine
+
 	k1 = h*f(sat)
 
 	#second step of rk4 routine
@@ -41,9 +42,9 @@ def rk4Quaternion(sat,f,h): #This is Runge Kutta-4 solver for ordinary different
 	#Normalize to obtain unit quaternion (different from regular rk4 solver)	
 	v_state_error_new[0:4] = v_state_error_new[0:4].copy()/np.linalg.norm(v_state_error_new[0:4].copy()) #error state at t0+h
 	
-	if v_state_error_new[3] < 0. :
+	if v_state_error_new[3] < 0.:
 		v_state_error_new[0:4] = -v_state_error_new[0:4].copy()
 	sat.setState(v_state_error_new.copy())
-	print(sat.getState())
+	# print(sat.getState())
 
-	return 
+	return

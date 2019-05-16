@@ -14,7 +14,7 @@ def ctrlTorqueToVoltage(sat):
     v_magnetic_field_i = sat.getMag_i()
     v_magnetic_field_b = quatRotate(sat.getQ(), v_magnetic_field_i) #get mag field in body frame
 
-    v_torque_control_b = sat.getControl_b()
+    v_torque_control_b = sat.getRequiredTorque()
     #below is formulae for calculating required magnetic moment from the control torque
     v_magnetic_moment_b = (1/(np.linalg.norm(v_magnetic_field_b))**2)*np.cross(v_magnetic_field_b,v_torque_control_b)
 

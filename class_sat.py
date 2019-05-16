@@ -67,9 +67,11 @@ class Satellite:
     def getDisturbance_b(self):	#return disturbance in body
         return self.v_dist_b
 
+    def setRequiredTorque(self, t):
+        self.requiredTorque = np.array([np.sin(t), np.cos(t), np.sin(2*t)])*1e-8
 
-    def getRequiredTorque(self, t):
-        return np.array([np.sin(t), np.cos(t), np.sin(2*t)]).copy()
+    def getRequiredTorque(self):
+        return self.requiredTorque
 
     def setControl_b(self,v_control):	#set control torque in body
         self.v_control_b = v_control.copy()
