@@ -29,16 +29,28 @@ time_b = mid_duty / PWM_FREQUENCY - time_a
 time_c = max_duty / PWM_FREQUENCY - time_a - time_b
 time_d = (1 - max_duty) / PWM_FREQUENCY
 
-denom_t = 1.0/min_duty + 1.0/max_duty + 1.0/mid_duty + 10
+denom_t = 1.0/min_duty + 1.0/max_duty + 1.0/mid_duty + 7
 num_a = int((1 / min_duty) * n / denom_t)
 num_b = int((1 / mid_duty) * n / denom_t)
 num_c = int((1 / max_duty) * n / denom_t)
 num_d = n - num_a - num_b - num_c
 
-timeArr_a = np.linspace(time_a/num_a, time_a, num_a, endpoint=True)
-timeArr_b = np.linspace(time_a + time_b/num_b, time_a + time_b, num_b, endpoint=True)
-timeArr_c = np.linspace(time_a + time_b + time_c/num_c, time_a + time_b + time_c, num_c, endpoint=True)
-timeArr_d = np.linspace(time_a + time_b + time_c + time_d/num_d, time_a + time_b + time_c + time_d, num_d, endpoint=True)
+if num_a != 0:
+    timeArr_a = np.linspace(time_a/num_a, time_a, num_a, endpoint=True)
+else:
+    timeArr_a = np.array([])
+if num_b != 0:
+    timeArr_b = np.linspace(time_a + time_b/num_b, time_a + time_b, num_b, endpoint=True)
+else:
+    timeArr_b = np.array([])
+if num_c != 0:
+    timeArr_c = np.linspace(time_a + time_b + time_c/num_c, time_a + time_b + time_c, num_c, endpoint=True)
+else:
+    timeArr_c = np.array([])
+if num_d != 0:
+    timeArr_d = np.linspace(time_a + time_b + time_c + time_d/num_d, time_a + time_b + time_c + time_d, num_d, endpoint=True)
+else:
+    timeArr_d = np.array([])
 
 num_cycles = int(CONTROL_STEP * PWM_FREQUENCY)
 num_instants = int(num_cycles * n)
@@ -51,6 +63,11 @@ current_applied = np.zeros((3, 3))
 edgeCurrentList = aac.getEdgeCurrent(duty_cycle, np.zeros(3))
 state_array = np.zeros((num_instants + 1, 7))
 start_1 = timer.time()
+# np.savetxt("variable_step_time.csv", time[:], delimiter=",")
+# print(num_a, num_b, num_c, num_d)
+print("duty cycle =", duty_cycle)
+
+'''
 for i in range(0, num_instants):
     current_applied = aac.getCurrentList(duty_cycle, np.linspace(time[i], time[i+1], 3, endpoint=True), 3, np.zeros(3))
     torque_applied = TorqueApplied.currentToTorque(current_applied, sat)
@@ -63,3 +80,5 @@ for i in range(0, num_instants):
 np.savetxt("aac_test_variable_step.csv", state_array[:, :], delimiter=",")
 end = timer.time()
 print(-start + end)
+'''
+
