@@ -12,7 +12,7 @@ def ctrlTorqueToVoltage(sat):
         Output: Voltage to be applied to Torquer to achieve the required control torque
     '''
     v_magnetic_field_i = sat.getMag_i()
-    v_magnetic_field_b = quatRotate(sat.getQ(), v_magnetic_field_i) #get mag field in body frame
+    v_magnetic_field_b = quatRotate(sat.getQ_BI(), v_magnetic_field_i) #get mag field in body frame
 
     v_torque_control_b = sat.getRequiredTorque()
     #below is formulae for calculating required magnetic moment from the control torque
@@ -50,7 +50,7 @@ def currentToTorque(current_list,sat):
     v_mu_app = No_Turns*np.multiply(v_A_Torquer,current_list[:, :])     # since current_list is array with [time, I1,I2,I3]
 
     v_magnetic_field_i=sat.getMag_i()
-    v_magnetic_field_b=quatRotate(sat.getQ(),v_magnetic_field_i) #get mag field in body frame
+    v_magnetic_field_b=quatRotate(sat.getQ_BI(),v_magnetic_field_i) #get mag field in body frame
 
     v_torque_app_b = np.cross(v_mu_app,v_magnetic_field_b)
     return v_torque_app_b
