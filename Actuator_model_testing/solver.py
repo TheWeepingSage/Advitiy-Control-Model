@@ -6,6 +6,7 @@ def rk4Quaternion(sat,f,h, torqueArray): #This is Runge Kutta-4 solver for ordin
 	'''
 		Input is satellite object, f (derivative of state vector (quaternion and angular velocity)) and integration step size
 		It returns value of state at next time (after a time step of h) (x(t+h)) using f and value of state at current time (x(t))
+
 	print(sat.getQ_BI())
 	print(sat.getW_BI_b())
 	print(sat.getControl_b())

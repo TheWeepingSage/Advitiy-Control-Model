@@ -1,3 +1,4 @@
+
 import numpy as np
 import math
 from constants_1U import No_Turns,v_A_Torquer,RESISTANCE,INDUCTANCE,CONTROL_STEP,h
@@ -29,6 +30,7 @@ def I(voltage):
         Output: multi-dimensional array of current for a whole CONTROL_STEP sampled at time interval h,
         when a voltage is directly applied to the circuit.
         First column contains time followed by currents in each torquer. i.e. [time, I1,I2,I3]
+
     '''
     N=int(CONTROL_STEP/h) #current is sampled at these many points
     t = np.linspace(0,CONTROL_STEP,N, endpoint=False)
@@ -42,7 +44,7 @@ def I(voltage):
 def currentToTorque(current_list,sat):
     '''
         This function calculates the torques acting on satellite to a corresponding current in the torquer.
-        Input: array of currents with first row as time and next three as currents, satellite
+        Input: array of currents, satellite
         Output: The torque acting on the satellite due to current in torquer at an instant.
     '''
     v_mu_app = No_Turns*np.multiply(v_A_Torquer,current_list[:, :])     # since current_list is array with [time, I1,I2,I3]

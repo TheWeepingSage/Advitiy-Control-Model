@@ -1,3 +1,4 @@
+#import matplotlib.pyplot as plt
 import numpy as np
 from constants_1U import RESISTANCE, INDUCTANCE, PWM_AMPLITUDE, PWM_FREQUENCY, CONTROL_STEP
 import math
@@ -27,7 +28,7 @@ def getAnalyticalCurrent(v_duty_cycle, edgeCurrentList, t):  #gives current at a
     current_t = np.zeros(3)
     for i in range(0, 3):   # t in the comments indicates the time since last edge
         if cur_cycle >= int(CONTROL_STEP/t_p):  # if t comes after the last edge, return the current at the last edge
-            current_t = edgeCurrentList[cur_cycle*2, :]
+            current_t = edgeCurrentList[cur_cycle * 2, :]
         elif t_mod_tp < dt_p[i]:  # if the instant lies before th falling edge
             current_t[i] = (PWM_AMPLITUDE - (PWM_AMPLITUDE - RESISTANCE * edgeCurrentList[cur_cycle*2, i])*math.exp(-RESISTANCE*t_mod_tp/INDUCTANCE)) / RESISTANCE  # I=1/R(V-(V-I0R)exp(-Rt/L))
         else:

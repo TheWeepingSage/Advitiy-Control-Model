@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e197912a-ce70-4396-9655-a160bc2e321b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tc_step_sampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/tc_step_sampling.py" afterDir="false" />
-    </list>
+    <list default="true" id="e197912a-ce70-4396-9655-a160bc2e321b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tc_step_sampling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="104" selection-start-line="9" selection-start-column="104" selection-end-line="9" selection-end-column="104" />
+            <state relative-caret-position="286">
+              <caret line="13" column="52" lean-forward="true" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -448,11 +443,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.tc_step_sampling" />
       <item itemvalue="Python.actuator" />
       <item itemvalue="Python.analytical_act_current" />
       <item itemvalue="Python.main_actuator_tcstep_test" />
       <item itemvalue="Python.plot_current" />
+      <item itemvalue="Python.plot_state" />
+      <item itemvalue="Python.tc_step_sampling" />
       <item itemvalue="Python.test_analytical_act_current" />
       <item itemvalue="Python.testcode" />
       <item itemvalue="Python.variable_step_pwm" />
@@ -689,7 +685,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558361464427</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Code for new sampling method">
+      <created>1558373775851</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1558373775851</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -726,14 +729,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4980185" visible="true" weight="0.270415" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980185" weight="0.270415" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1030,8 +1032,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tc_step_sampling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="104" selection-start-line="9" selection-start-column="104" selection-end-line="9" selection-end-column="104" />
+        <state relative-caret-position="286">
+          <caret line="13" column="52" lean-forward="true" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
