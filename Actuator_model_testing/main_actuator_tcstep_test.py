@@ -51,3 +51,7 @@ for i in range(0, num_instants - 1):
 np.savetxt("aac_test_tcstep.csv", state_array[:, :], delimiter=",")
 end = timer.time()
 print(-start + end)
+
+
+
+

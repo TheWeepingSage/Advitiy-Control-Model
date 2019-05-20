@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e197912a-ce70-4396-9655-a160bc2e321b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/aac_test_min_step.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/aac_test_min_step.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tc_step_sampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/tc_step_sampling.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tc_step_sampling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+            <state relative-caret-position="198">
+              <caret line="9" column="104" selection-start-line="9" selection-start-column="104" selection-end-line="9" selection-end-column="104" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -46,13 +48,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+            <state relative-caret-position="1081">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Actuator_model_testing/plot_current.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+              <folding>
+                <element signature="e#2#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,10 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plot_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
-              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+            <state relative-caret-position="132">
+              <caret line="10" column="60" lean-forward="true" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -145,8 +157,10 @@
         <option value="$PROJECT_DIR$/main_actuator_min_step_sampling.py" />
         <option value="$PROJECT_DIR$/min_step_sampling.py" />
         <option value="$PROJECT_DIR$/analytical_act_current.py" />
-        <option value="$PROJECT_DIR$/tc_step_sampling.py" />
         <option value="$PROJECT_DIR$/plot_state.py" />
+        <option value="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" />
+        <option value="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" />
+        <option value="$PROJECT_DIR$/tc_step_sampling.py" />
       </list>
     </option>
   </component>
@@ -160,6 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,12 +191,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -201,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_actuator_tcstep_test">
+  <component name="RunManager" selected="Python.plot_current">
     <configuration name="actuator" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Advitiy-Control-Model" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,7 +279,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="plot_state" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="plot_current" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Advitiy-Control-Model" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -273,11 +287,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\Millen\PycharmProjects\PythonTut\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Actuator_model_testing" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_state.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -438,7 +452,7 @@
       <item itemvalue="Python.actuator" />
       <item itemvalue="Python.analytical_act_current" />
       <item itemvalue="Python.main_actuator_tcstep_test" />
-      <item itemvalue="Python.plot_state" />
+      <item itemvalue="Python.plot_current" />
       <item itemvalue="Python.test_analytical_act_current" />
       <item itemvalue="Python.testcode" />
       <item itemvalue="Python.variable_step_pwm" />
@@ -654,7 +668,28 @@
       <option name="project" value="LOCAL" />
       <updated>1558356648689</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Data for new sampling method">
+      <created>1558361261507</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1558361261507</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Data for new sampling method">
+      <created>1558361305298</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1558361305298</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Code for new sampling method">
+      <created>1558361464427</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1558361464427</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -693,12 +728,12 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980185" visible="true" weight="0.270415" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4980185" visible="true" weight="0.270415" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -745,7 +780,9 @@
     <MESSAGE value="Modified according to QA suggestions" />
     <MESSAGE value="Solver for testing actuator" />
     <MESSAGE value="Code for testing actuator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code for testing actuator" />
+    <MESSAGE value="Data for new sampling method" />
+    <MESSAGE value="Code for new sampling method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code for new sampling method" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tokenize.py">
@@ -941,18 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/min_step_sampling.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -973,20 +998,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tc_step_sampling.py">
+    <entry file="file://$PROJECT_DIR$/plot_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+          <caret line="10" column="60" lean-forward="true" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/plot_current.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding>
+            <element signature="e#2#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+        <state relative-caret-position="1081">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tc_step_sampling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="104" selection-start-line="9" selection-start-column="104" selection-end-line="9" selection-end-column="104" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
