@@ -41,6 +41,7 @@ for i in range(0, num_instants):
     torque_applied = TorqueApplied.currentToTorque(current_applied, sat)
     solver.rk4Quaternion(sat, dynamics_actuator.x_dot_BO, time[i+1]-time[i], torque_applied)
     state_array[i+1, :] = sat.getState()
+    #print(sat.getState())
     if i % (num_instants / 100) == 0:
         print(i/(num_instants / 100), "%")
         end_1 = timer.time()
