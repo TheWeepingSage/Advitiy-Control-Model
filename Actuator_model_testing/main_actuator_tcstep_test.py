@@ -48,6 +48,6 @@ for i in range(0, num_instants - 1):
         end_1 = timer.time()
         print(end_1 - start_1)
     '''
-np.savetxt("aac_test_min_step.csv", state_array[:, :], delimiter=",")
+np.savetxt("aac_test_tcstep.csv", state_array[:, :], delimiter=",")
 end = timer.time()
 print(-start + end)
