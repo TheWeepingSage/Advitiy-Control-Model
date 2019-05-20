@@ -49,6 +49,6 @@ def rk4Quaternion(sat,f,h, torqueArray): #This is Runge Kutta-4 solver for ordin
 	if v_state_error_new[3] < 0.:
 		v_state_error_new[0:4] = -v_state_error_new[0:4].copy()
 	sat.setState(v_state_error_new.copy())
-	print(sat.getState())
+	#print(sat.getState())
 
 	return

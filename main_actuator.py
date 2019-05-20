@@ -17,7 +17,7 @@ sat.setRequiredTorque(0)
 voltageRequired = TorqueApplied.ctrlTorqueToVoltage(sat)
 duty_cycle = voltageRequired/3.3
 current_applied = np.zeros((3, 3))
-edgeCurrentList = aac.getEdgeCurrent(duty_cycle, np.zeros(3))
+edgeCurrentArray = aac.getEdgeCurrent(duty_cycle, np.zeros(3))
 state_array = np.zeros((100001, 3))
 for i in range(0, 100000):
     current_applied = aac.getCurrentList(duty_cycle, np.linspace(time[i], time[i+1], 3, endpoint=True), 3, np.zeros(3))
