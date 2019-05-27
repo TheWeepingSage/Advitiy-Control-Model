@@ -39,7 +39,7 @@ current2 = aac.getCurrentList(duty_cycle, time2, len(time2), I0=np.zeros(3))
 current3 = aac.getCurrentList(duty_cycle, time3, len(time3), I0=np.zeros(3))
 
 plt.plot(time1, current1[:, 0], label="tc method [0]")
-plt.plot(time2, current2[:, 0], label= "min step method [0]")
+#plt.plot(time2, current2[:, 0], label= "min step method [0]")
 plt.plot(time3, current3[:, 0], label="true [0]")
 plt.legend()
 plt.xlabel = "time(s)"
@@ -47,7 +47,7 @@ plt.ylabel = "current(A)"
 plt.show()
 
 plt.plot(time1, current1[:, 1], label="tc method [1]")
-plt.plot(time2, current2[:, 1], label= "min step method [1]")
+#plt.plot(time2, current2[:, 1], label= "min step method [1]")
 plt.plot(time3, current3[:, 1], label="true [1]")
 plt.legend()
 plt.xlabel = "time(s)"
@@ -55,7 +55,7 @@ plt.ylabel = "current(A)"
 plt.show()
 
 plt.plot(time1, current1[:, 2], label="tc method [2]")
-plt.plot(time2, current2[:, 2], label= "min step method [2]")
+#plt.plot(time2, current2[:, 2], label= "min step method [2]")
 plt.plot(time3, current3[:, 2], label="true [2]")
 plt.legend()
 plt.xlabel = "time(s)"

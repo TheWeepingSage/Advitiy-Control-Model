@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e197912a-ce70-4396-9655-a160bc2e321b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Actuator_model_testing/actual_state_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/aac_test_tcstep.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/aac_test_tcstep.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/main_actuator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/main_actuator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/main_actuator_vstep_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/min_step_sampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/min_step_sampling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/tc_step_sampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/tc_step_sampling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Actuator_model_testing/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Actuator_model_testing/solver.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,20 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/constants_1U.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2354">
-              <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Actuator_model_testing/tc_step_sampling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+            <state relative-caret-position="396">
+              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -38,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="374">
+              <caret line="39" column="78" lean-forward="true" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -47,11 +44,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Actuator_model_testing/plot_current.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_variable_time_step.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+            <state relative-caret-position="88">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_min_step_sampling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-154">
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Actuator_model_testing/min_step_sampling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -110,10 +127,14 @@
         <option value="$PROJECT_DIR$/min_step_sampling.py" />
         <option value="$PROJECT_DIR$/analytical_act_current.py" />
         <option value="$PROJECT_DIR$/plot_state.py" />
-        <option value="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" />
         <option value="$PROJECT_DIR$/tc_step_sampling.py" />
         <option value="$PROJECT_DIR$/Actuator_model_testing/tc_step_sampling.py" />
+        <option value="$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py" />
         <option value="$PROJECT_DIR$/Actuator_model_testing/plot_current.py" />
+        <option value="$PROJECT_DIR$/Actuator_model_testing/actual_state_test.py" />
+        <option value="$PROJECT_DIR$/Actuator_model_testing/main_actuator.py" />
+        <option value="$PROJECT_DIR$/Actuator_model_testing/solver.py" />
+        <option value="$PROJECT_DIR$/Actuator_model_testing/min_step_sampling.py" />
       </list>
     </option>
   </component>
@@ -401,12 +422,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.plot_state" />
-      <item itemvalue="Python.tc_step_sampling" />
       <item itemvalue="Python.actuator" />
       <item itemvalue="Python.analytical_act_current" />
       <item itemvalue="Python.main_actuator_tcstep_test" />
       <item itemvalue="Python.plot_current" />
+      <item itemvalue="Python.plot_state" />
+      <item itemvalue="Python.tc_step_sampling" />
       <item itemvalue="Python.test_analytical_act_current" />
       <item itemvalue="Python.testcode" />
       <item itemvalue="Python.variable_step_pwm" />
@@ -657,7 +678,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558375147464</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Code for new sampling method">
+      <created>1558594915675</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1558594915675</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -696,12 +724,12 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4980185" visible="true" weight="0.270415" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32931727" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980185" weight="0.270415" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -773,16 +801,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appr_actuator.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actuator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="89" column="12" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/satellite.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -886,13 +904,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/solver.py" />
-    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_variable_time_step.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TorqueApplied.py" />
     <entry file="file://$PROJECT_DIR$/dynamics_actuator.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -917,10 +928,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/plot_current.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/actual_state_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/frames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/class_sat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/TorqueApplied.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/analytical_act_current.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/actuator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="89" column="12" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/dynamics_actuator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="28" column="94" lean-forward="true" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/solver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_vstep_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/min_step_sampling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_variable_time_step.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_min_step_sampling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Actuator_model_testing/main_actuator_tcstep_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="374">
+          <caret line="39" column="78" lean-forward="true" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -929,18 +1066,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Actuator_model_testing/tc_step_sampling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Actuator_model_testing/plot_current.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+        <state relative-caret-position="396">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
