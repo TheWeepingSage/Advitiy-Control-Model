@@ -2,7 +2,7 @@ import numpy as np
 from constants_1U import PWM_FREQUENCY
 
 def getTime(duty_cycle, n):
-    v_duty_cycle = np.abs(np.sort(duty_cycle))
+    v_duty_cycle = np.sort(np.abs(duty_cycle))
     if v_duty_cycle[0]*v_duty_cycle[2]!=0:
         time_a = v_duty_cycle[0]/ PWM_FREQUENCY
         timeStep_h = time_a / n
@@ -27,11 +27,11 @@ def getTime(duty_cycle, n):
         timeArr_h = np.linspace(timeStep_h, time_b, int(time_b / timeStep_h), endpoint=True)
         timeArr_l = np.linspace(timeStep_l + time_b, 1 / PWM_FREQUENCY, n, endpoint=True)
         timeArr = np.concatenate((timeArr_h, timeArr_l))
-    elif v_duty_cycle[np.nonzero(v_duty_cycle)[0]]!=0:
+    elif np.count_nonzero(v_duty_cycle)!=0:
         time_peak = v_duty_cycle[np.nonzero(v_duty_cycle)[0]] / PWM_FREQUENCY
         timeArr_h = np.linspace(time_peak/n, time_peak, n, endpoint=True)
         timeArr_l = np.linspace(1/PWM_FREQUENCY/n+time_peak*(n-1)/n, 1/PWM_FREQUENCY, n, endpoint=True)
         timeArr = np.concatenate((timeArr_h, timeArr_l))
     else:
-        timeArr = np.linspace(1 / PWM_FREQUENCY / 2 / n, PWM_FREQUENCY, 2*n, endpoint=True)
+        timeArr = np.linspace(1 / PWM_FREQUENCY / 2 / n, 1/PWM_FREQUENCY, 2*n, endpoint=True)
     return timeArr
