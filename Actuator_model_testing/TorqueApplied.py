@@ -38,7 +38,7 @@ def I(voltage):
     for s in range(0,N):
         m_i_app_dc[s,0]=t[s]
         m_i_app_dc[s,1:4]=(voltage/RESISTANCE)*(1-np.exp(-RESISTANCE*t[s]/INDUCTANCE)) #LR circuit equation
-    return  m_i_app_dc
+    return m_i_app_dc
 
 
 def currentToTorque(current_list,sat):
